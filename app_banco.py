@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, date
 
 Nome_Usuario = ['dd']
 Cad_Usuario_Novo = ['ss']
-Cad_Idade = ['34']
+Cad_Idade = [33]
 
 def Nome_programa():
    #função mostra o nome do programa
@@ -72,13 +72,14 @@ def Emprestimo ():
         main()
 
     else:
+        idade = Cad_Idade
         Valor_Emprestimo = float(input('qual o valor desejado?'))
         Quantidade_parcelas = int(input('quantos meses você deseja financiar'))
         Valor_parcela = (Valor_Emprestimo / Quantidade_parcelas)
         print(Valor_parcela)
-        idade = Cad_Idade
-        #if idade >= 33:
-            #print('passou')
+
+        if idade[0] >= 33:
+            print('passou')
             #Juros_Maior_33anos()
             #Valor_parcela_juros = Valor_parcela * Quantidade_parcelas * juros_mes_maior
             #print('o valor da parcela é {}'.format(Valor_parcela_juros))
