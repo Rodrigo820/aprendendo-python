@@ -80,7 +80,7 @@ def Emprestimo ():
 
         if idade[0] >= 33:
             print('passou')
-            #Juros_Maior_33anos()
+            Juros_Maior_33anos()
             #Valor_parcela_juros = Valor_parcela * Quantidade_parcelas * juros_mes_maior
             #print('o valor da parcela é {}'.format(Valor_parcela_juros))
             #input()
