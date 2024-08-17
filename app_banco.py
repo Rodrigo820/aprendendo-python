@@ -119,13 +119,16 @@ def Financiamento():
     Financiamento_Escolha()
 
 def Financiamento_Veiculo():
-    print('Olá {}, seja bem vindo \nFinanciamento veiculo'.format(Nome_Usuario))
+    nome = Nome_Usuario[0]
+    print('Olá {}, seja bem vindo \nFinanciamento veiculo'.format(nome))
+    input()
 
 def Financiamento_Imovel():
     print('Olá {}, seja bem vindo \nFinanciamento Imovel'.format(Nome_Usuario))
-
+    input()
 def Financiamento_Estudantil():
     print('Olá {}, seja bem vindo \nFinanciamento Estudantil'.format(Nome_Usuario))
+    input()
 
 def Financiamento_Escolha():
     if Escolha_Financiamento == 1:
