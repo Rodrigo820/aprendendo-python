@@ -20,7 +20,7 @@ def Cadas_Usuario():
 
 def Menu_principal():
     os.system('cls')
-    print('Seja bem vindo {}'.format(Nome_Usuario))
+    print('Seja bem vindo {}'.format(Nome_Usuario[0]))
     print('''
     [1] Cadastro Cliente
     [2] Emprestimo
@@ -71,7 +71,7 @@ def Juros_Maior_33anos():
     juros_mes = 0.99 / 100
     Montante = Valor_Emprestimo + (Valor_Emprestimo * juros_mes * Quantidade_parcelas)
     Valor_da_parcela = Montante / Quantidade_parcelas
-    print('O valor solicitado é R${} ao final de {} parcelas você irá pagar o total de R${}'.format(Valor_Emprestimo, Quantidade_parcelas, Montante))
+    print('O valor solicitado é R${}, ao final de {} parcelas, você irá pagar o total de R${} e sua parcela será de R${}'.format(Valor_Emprestimo, Quantidade_parcelas, Montante, Valor_da_parcela))
     input()
 
 def Juros_Menor_33anos():
@@ -119,8 +119,7 @@ def Financiamento():
     Financiamento_Escolha()
 
 def Financiamento_Veiculo():
-    nome = Nome_Usuario[0]
-    print('Olá {}, seja bem vindo \nFinanciamento veiculo'.format(nome))
+    print('Olá {}, seja bem vindo \nFinanciamento veiculo'.format(Nome_Usuario[0]))
     input()
 
 def Financiamento_Imovel():
