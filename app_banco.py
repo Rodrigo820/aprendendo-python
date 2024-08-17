@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, date
 
 Nome_Usuario = ['dd']
 Cad_Usuario_Novo = ['ss']
-Cad_Idade = [33]
+Cad_Idade = [34]
 
 def Nome_programa():
    #função mostra o nome do programa
@@ -56,11 +56,25 @@ def Cadastro_Completo():
     Idade()
 
 def Juros_Maior_33anos():
-    global  juros_mes_maior
-    juros_mes_maior = 0.99/100
+    Valor_Emprestimo = float(input('qual o valor desejado?'))
+    Quantidade_parcelas = int(input('quantos meses você deseja financiar'))
+    print('calculando + 33 anos...')
+    juros_mes = 0.99 / 100
+    Montante = Valor_Emprestimo + (Valor_Emprestimo * juros_mes * Quantidade_parcelas)
+    Valor_da_parcela = Montante / Quantidade_parcelas
+    print('O valor solicitado é R${} ao final de {} parcelas você irá pagar o total de R${}'.format(Valor_Emprestimo, Quantidade_parcelas, Montante))
+    input()
 
 def Juros_Menor_33anos():
+    Valor_Emprestimo = float(input('qual o valor desejado?'))
+    Quantidade_parcelas = int(input('quantos meses você deseja financiar'))
+    print('calculando - 33 anos ...')
+    print('o valor do emprestimo é{}'.format(Valor_Emprestimo))
     juros_mes = 1.29/100
+    Montante = Valor_Emprestimo + (Valor_Emprestimo * juros_mes * Quantidade_parcelas)
+    Valor_da_parcela = Montante / Quantidade_parcelas
+    print('O valor solicitado é R${} ao final de {} parcelas você irá pagar o total de R${}'.format(Valor_Emprestimo, Quantidade_parcelas, Montante))
+    input()
 
 def Emprestimo ():
     os.system('cls')
@@ -73,18 +87,15 @@ def Emprestimo ():
 
     else:
         idade = Cad_Idade
-        Valor_Emprestimo = float(input('qual o valor desejado?'))
-        Quantidade_parcelas = int(input('quantos meses você deseja financiar'))
-        Valor_parcela = (Valor_Emprestimo / Quantidade_parcelas)
-        print(Valor_parcela)
+
+
 
         if idade[0] >= 33:
-            print('passou')
             Juros_Maior_33anos()
-            #Valor_parcela_juros = Valor_parcela * Quantidade_parcelas * juros_mes_maior
-            #print('o valor da parcela é {}'.format(Valor_parcela_juros))
-            #input()
-            #main()
+
+
+        else:
+            Juros_Menor_33anos()
 
 
 
