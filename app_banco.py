@@ -117,6 +117,7 @@ def Financiamento():
         [4] Sair''')
     Escolha_Financiamento = int(input())
     Financiamento_Escolha()
+
 def Financiamento_Veiculo():
     print('Olá {}, seja bem vindo \nFinanciamento veiculo'.format(Nome_Usuario))
 
