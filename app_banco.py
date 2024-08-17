@@ -1,9 +1,9 @@
 import os
 from datetime import datetime, timedelta, date
 
-Nome_Usuario = ['dd']
-Cad_Usuario_Novo = ['ss']
-Cad_Idade = [34]
+Nome_Usuario = []
+Cad_Usuario_Novo = []
+Cad_Idade = []
 
 def Nome_programa():
    #função mostra o nome do programa
@@ -39,9 +39,18 @@ def Escolha_Do_Usuario():
         Emprestimo()
     elif escolha == 3:
         os.system('cls')
-        print('Financiamento')
+        Financiamento()
     elif escolha == 4:
         os.system('cls')
+        print('Tem certeza que deseja sair?\n Sim\nNão')
+        sair = str(input()).strip().upper()
+        if sair == "NÃO":
+            main()
+        else:
+            print('até logo!')
+            os.system('cls')
+            exit()
+
     else:
         os.system('cls')
         print('Escolha uma opção valida\n Aperte qualquer botão para voltar ao menu principal')
@@ -97,7 +106,46 @@ def Emprestimo ():
         else:
             Juros_Menor_33anos()
 
+def Financiamento():
+    os.system('cls')
+    global Escolha_Financiamento
+    print('Financiamento\n')
+    print('''
+        [1] Financiamento Veiculo
+        [2] Financiamento Imovel
+        [3] Financiamento Estudantil
+        [4] Sair''')
+    Escolha_Financiamento = int(input())
+    Financiamento_Escolha()
+def Financiamento_Veiculo():
+    print('Olá {}, seja bem vindo \nFinanciamento veiculo'.format(Nome_Usuario))
 
+def Financiamento_Imovel():
+    print('Olá {}, seja bem vindo \nFinanciamento Imovel'.format(Nome_Usuario))
+
+def Financiamento_Estudantil():
+    print('Olá {}, seja bem vindo \nFinanciamento Estudantil'.format(Nome_Usuario))
+
+def Financiamento_Escolha():
+    if Escolha_Financiamento == 1:
+        os.system('cls')
+        Financiamento_Veiculo()
+    elif Escolha_Financiamento == 2:
+        os.system('cls')
+        Financiamento_Imovel()
+    elif Escolha_Financiamento == 3:
+        os.system('cls')
+        Financiamento_Estudantil()
+    elif Escolha_Financiamento == 4:
+        os.system('cls')
+        print('Tem certeza que deseja sair?\n Sim\nNão')
+        sair = str(input()).strip().upper()
+        if sair == "NÃO":
+            main()
+        else:
+            print('até logo!')
+            os.system('cls')
+            exit()
 
 
 def Idade():
