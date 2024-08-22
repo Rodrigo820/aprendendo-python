@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, date
 Nome_Usuario = []
 Cad_Usuario_Novo = []
 Cad_Idade = []
-Financiamento_Banco_Veic_Novo = [{'Banco':'Bradesco', 'Tx_juros':'1,58/100'},{'Banco':'caixa', 'Tx_juros':'1,58/100'}]
+Financiamento_Banco_Veic_Novo = [{'Banco':'Bradesco', 'Tx_juros':'1.58/100'},{'Banco':'caixa', 'Tx_juros':'1.58/100'}]
 
 Financiamento_Banco_Veic_Usado = [{'Banco':'Bradesco', 'Tx_juros': '3,58/100'},
                                   {'Banco': 'Caixa Economica', 'Tx_juros': '3,85/100'}]
@@ -163,9 +163,20 @@ def Financiamento_Veiculo_Novo():
     for Banco in Financiamento_Banco_Veic_Novo:
         Nome_Banco = Banco['Banco']
         print(f' - {Nome_Banco}')
+    opcao = int(input('qual a opcao\n[1] Bradesco\n[2]caixa\n'))
+    if opcao ==1:
+        valor_financiamento = float(input("Qual o valor que deseja financiar?\n"))
+        quantidade_parcelas = int(input('Quantas parcelas?\n '))
+        tx_juro = eval(Financiamento_Banco_Veic_Novo[0]['Tx_juros'])
+        juros =float(tx_juro)
+        Montante = valor_financiamento + (valor_financiamento * juros * quantidade_parcelas)
+        vl_parcela = Montante / quantidade_parcelas
+        print('O seu financiamento de R${:.2f} em {} parcelas o valor da parcela será de R${:.2f}'.format(valor_financiamento,quantidade_parcelas,vl_parcela))
+        input()
 
 
-Financiamento_Veiculo_Novo()
+    
+
 
 def Financiamento_Veiculo_Usado():
     pass
