@@ -4,6 +4,11 @@ from datetime import datetime, timedelta, date
 Nome_Usuario = []
 Cad_Usuario_Novo = []
 Cad_Idade = []
+Financiamento_Banco_Veic_Novo = [{'Banco':'Bradesco', 'Tx_juros':'1,58/100'},{'Banco':'caixa', 'Tx_juros':'1,58/100'}]
+
+Financiamento_Banco_Veic_Usado = [{'Banco':'Bradesco', 'Tx_juros': '3,58/100'},
+                                  {'Banco': 'Caixa Economica', 'Tx_juros': '3,85/100'}]
+
 
 def Nome_programa():
    #função mostra o nome do programa
@@ -118,17 +123,6 @@ def Financiamento():
     Escolha_Financiamento = int(input())
     Financiamento_Escolha()
 
-def Financiamento_Veiculo():
-    print('Olá {}, seja bem vindo \nFinanciamento veiculo'.format(Nome_Usuario[0]))
-    input()
-
-def Financiamento_Imovel():
-    print('Olá {}, seja bem vindo \nFinanciamento Imovel'.format(Nome_Usuario))
-    input()
-def Financiamento_Estudantil():
-    print('Olá {}, seja bem vindo \nFinanciamento Estudantil'.format(Nome_Usuario))
-    input()
-
 def Financiamento_Escolha():
     if Escolha_Financiamento == 1:
         os.system('cls')
@@ -149,6 +143,40 @@ def Financiamento_Escolha():
             print('até logo!')
             os.system('cls')
             exit()
+
+def Financiamento_Veiculo():
+    os.system('cls')
+    print('Olá {}, seja bem vindo \nFinanciamento veiculo'.format(Nome_Usuario[0]))
+    Tipo_Financiamento = int(input('Qual tipo de finaciamento você deseja?\n[1]Veiculo Novo\n[2]Veiculo Usado\n'))
+    if Tipo_Financiamento == 1:
+        Financiamento_Veiculo_Novo()
+    elif Tipo_Financiamento == 2:
+        Financiamento_Veiculo_Usado()
+    else:
+        print('Escolha uma opção valida!\nAperte qualquer tecla para voltar!')
+        input()
+        Financiamento_Veiculo()
+
+
+
+def Financiamento_Veiculo_Novo():
+    for Banco in Financiamento_Banco_Veic_Novo:
+        Nome_Banco = Banco['Banco']
+        print(f' - {Nome_Banco}')
+
+
+Financiamento_Veiculo_Novo()
+
+def Financiamento_Veiculo_Usado():
+    pass
+def Financiamento_Imovel():
+    print('Olá {}, seja bem vindo \nFinanciamento Imovel'.format(Nome_Usuario))
+    input()
+def Financiamento_Estudantil():
+    print('Olá {}, seja bem vindo \nFinanciamento Estudantil'.format(Nome_Usuario))
+    input()
+
+
 
 
 def Idade():
